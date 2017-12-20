@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>Старая орфография</title>
+    </head>
+    <body>
+        <!-- Шапка -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Старая орфография</a>
+				</div>
+    			<div id="navbar" class="collapse navbar-collapse">
+    				<ul class="nav navbar-nav">
+    					<li class="active"><a href="/">Главная</a></li>
+    					<li><a href="/news">Новости</a></li>
+    					<li><a href="/test">Тест</a></li>
+    				</ul>
+    			</div>
+		    </div>
+		</nav>
+
+        <!-- Основная часть -->
+        <div class="container theme-showcase" role="main">
+
+		    <!-- Заголовок -->
+			<div class="jumbotron">
+				<h1>Дореволюционная орфография</h1>
+                <h2><i>Главная</i></h2>
+			</div>
+
+            <div class="col-md-6">
+    			<!-- Перевод слова -->
+    			<form action="/translit_result">
+    				<h2>Транслитерировать слово</h2>
+                    <p>Впишите в форму ниже слово, и оно будет транслитерировано в дореволюционную орфографию.</p>
+                    <p>Ваше слово: <br /><input type="text" name="word_modern"></p>
+    				<!-- Кнопка "Отправить" -->
+    				<p align="center"><input type="submit" class="btn btn-lg btn-primary" value="Отправить"></p>
+    			</form>
+            </div>
+            <div class="col-md-6">
+    			<!-- Погода -->
+    			<h2>Текущая погода в Скопье</h2>
+				<p><b>Температура:</b> {{ temperature }}°C</p>
+				<p><b>Осадки:</b> {{ precip }}</p>
+            </div>
+		</div>
+    </body>
+</html>
