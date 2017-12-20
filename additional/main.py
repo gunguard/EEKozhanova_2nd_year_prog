@@ -1,5 +1,6 @@
 import urllib.request
 import re
+import pymorphy2
 from flask import Flask
 from flask import render_template, request, redirect, url_for
 
@@ -58,9 +59,13 @@ def test_result():
         score = 0
         variants = []
         for i in range(1, 11):
-            word_id = "word" + str(i)
-            variants.append(request.args.get(word_id))
-    return render_template('test_result.html', score=score)
+            question = "q" + str(i)
+            ans = request.args.get(question)
+            if ans == "true":
+                score += 1
+        point_morph = pymorphy2.MorphAnalyzer().parse("балл")[0]
+        points = point_morph.make_agree_with_number(score).word
+    return render_template('test_result.html', score=score, points=points)
 
 
 @app.route('/translit_result')

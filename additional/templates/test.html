@@ -22,7 +22,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/">Старая орфография</a>
+					<a class="navbar-brand" href="/">Дореволюционная орфография</a>
 				</div>
     			<div id="navbar" class="collapse navbar-collapse">
     				<ul class="nav navbar-nav">
@@ -45,30 +45,63 @@
 
             <!-- Заголовок раздела -->
             <div class="well">
-                <h2>Проверьте себя</h2>
-                Как хорошо вы знаете дореволюционную орфографию?
+                <h2>Как хорошо вы знаете дореволюционную орфографию?</h2>
+                <h3>Инструкция</h3>
+                <p>Вам даны слова в современной орфографии. Из двух вариантов ниже выберите тот, который считаете верным
+                для дореволюционной орфографии. Как только закончите, нажмите на кнопку "Посмотреть результат", чтобы
+                узнать, как хорошо вы справились с заданием.</p>
             </div>
 
             <!-- Тест (форма) -->
             <form action="/test_result">
                 <!-- Вопросы -->
                 <div class="col-md-6">
-                    <p>Слово 1: <br /><input type="text" placeholder="Введите ваш ответ" name="word1"></p>
-                    <p>Слово 2: <br /><input type="text" placeholder="Введите ваш ответ" name="word2"></p>
-                    <p>Слово 3: <br /><input type="text" placeholder="Введите ваш ответ" name="word3"></p>
-                    <p>Слово 4: <br /><input type="text" placeholder="Введите ваш ответ" name="word4"></p>
-                    <p>Слово 5: <br /><input type="text" placeholder="Введите ваш ответ" name="word5"></p>
+                    <p>Месте: <br />
+                        <input type="radio" name="q1" value="true"> мѣстѣ<br />
+                        <input type="radio" name="q1" value="false"> мѣсте<br />
+                    </p>
+                    <p>(он) Сер: <br />
+                        <input type="radio" name="q2" value="true"> сѣръ<br />
+                        <input type="radio" name="q2" value="false"> серъ<br />
+                    </p>
+                    <p>Нега: <br />
+                        <input type="radio" name="q3" value="false"> нега<br />
+                        <input type="radio" name="q3" value="true"> нѣга<br />
+                    </p>
+                    <p>Смешение: <br />
+                        <input type="radio" name="q4" value="false"> смѣшение<br />
+                        <input type="radio" name="q4" value="true"> смѣшеніе<br />
+                    </p>
+                    <p>(в каком-то) Падеже: <br />
+                        <input type="radio" name="q5" value="false"> падеже<br />
+                        <input type="radio" name="q5" value="true"> падежѣ<br />
+                    </p>
                 </div>
                 <div class="col-md-6">
-                    <p>Слово 6: <br /><input type="text" placeholder="Введите ваш ответ" name="word6"></p>
-                    <p>Слово 7: <br /><input type="text" placeholder="Введите ваш ответ" name="word7"></p>
-                    <p>Слово 8: <br /><input type="text" placeholder="Введите ваш ответ" name="word8"></p>
-                    <p>Слово 9: <br /><input type="text" placeholder="Введите ваш ответ" name="word9"></p>
-                    <p>Слово 10: <br /><input type="text" placeholder="Введите ваш ответ" name="word10"></p>
+                    <p>(о) Ружье: <br />
+                        <input type="radio" name="q6" value="false"> ружье<br />
+                        <input type="radio" name="q6" value="true"> ружьѣ<br />
+                    </p>
+                    <p>Оне (устаревшее местоимениее 3pl.f): <br />
+                        <input type="radio" name="q7" value="false"> оне<br />
+                        <input type="radio" name="q7" value="true"> онѣ<br />
+                    </p>
+                    <p>Велено: <br />
+                        <input type="radio" name="q8" value="true"> велѣно<br />
+                        <input type="radio" name="q8" value="false"> велено<br />
+                    </p>
+                    <p>Сесть: <br />
+                        <input type="radio" name="q9" value="true"> сѣсть<br />
+                        <input type="radio" name="q9" value="false"> сесть<br />
+                    </p>
+                    <p>Певчий: <br />
+                        <input type="radio" name="q10" value="true"> пѣвчій<br />
+                        <input type="radio" name="q10" value="false"> певчий<br />
+                    </p>
                 </div>
                 <!-- Кнопка "Отправить" -->
                 <p align="center">
-                    <input type="submit" class="btn btn-lg btn-primary" value="Отправить">
+                    <input type="submit" class="btn btn-lg btn-primary" value="Посмотреть результат">
                 </p>
             </form>
 		</div>
