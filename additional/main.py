@@ -1,10 +1,10 @@
-import urllib.request
-from urllib.parse import quote, unquote
 import re
-import pymorphy2
-import pymystem3
+import urllib.request
 from flask import Flask
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request
+from pymorphy2 import MorphAnalyzer
+from pymystem3 import Mystem
+from urllib.parse import quote
 
 app = Flask(__name__)
 
@@ -47,7 +47,7 @@ def get_translit(lemma):
 
 
 def translit(word):
-    m = pymystem3.Mystem()
+    m = Mystem()
     word = word.lower()
     # пытаемся найти слово в словаре
     lemma = m.lemmatize(word)[0]
@@ -79,13 +79,12 @@ def test():
 def test_result():
     if request.args:
         score = 0
-        variants = []
         for i in range(1, 11):
             question = "q" + str(i)
             ans = request.args.get(question)
             if ans == "true":
                 score += 1
-        point_morph = pymorphy2.MorphAnalyzer().parse("балл")[0]
+        point_morph = MorphAnalyzer().parse("балл")[0]
         points = point_morph.make_agree_with_number(score).word
     return render_template('test_result.html', score=score, points=points)
 
